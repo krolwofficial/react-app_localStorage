@@ -1,0 +1,20 @@
+.form {
+  padding: 2rem 0;
+
+  .range-field {
+    margin: 0;
+  }
+
+  @include respond-to(large) {
+    padding: 3rem 0;
+  }
+
+  &__input {
+    margin-bottom: 1rem !important;
+  }
+
+  input[type="button" i],
+  input[type="submit" i] {
+    color: white;
+  }
+}
