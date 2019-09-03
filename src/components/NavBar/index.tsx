@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import MenuButton from "./MenuButton";
 import cn from "classnames";
 import { NavLink } from "react-router-dom";
 
 const NavBar: React.FC = () => {
-  const [open, setOpen] = React.useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   return (
     <nav
@@ -20,6 +20,7 @@ const NavBar: React.FC = () => {
             activeClassName="is-active"
             to="/"
             className="nav-wrapper__a"
+            onClick={() => setOpen(false)}
           >
             Dashboard
           </NavLink>
@@ -29,6 +30,7 @@ const NavBar: React.FC = () => {
             activeClassName="is-active"
             to="/gallery"
             className="nav-wrapper__a"
+            onClick={() => setOpen(false)}
           >
             Gallery
           </NavLink>

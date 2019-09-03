@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Dashboard component 1`] = `
+<div
+  className="row page "
+>
+  <div
+    className="col s12 m5 l5 offset-l1"
+  >
+    <div
+      className="container"
+    >
+      <withRouter(Form) />
+    </div>
+  </div>
+  <div
+    className="col s12 m7 l6"
+  >
+    <div
+      className="container white"
+    >
+      <Preview />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Should render Form component 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`Should render InputRange component 1`] = `
+<div
+  className="input-field col s12"
+>
+  <p>
+    Select 
+    width
+    : 
+  </p>
+  <p
+    className="range-field"
+  >
+    <input
+      className="form__input"
+      defaultValue="40"
+      max={200}
+      min="0"
+      onChange={[Function]}
+      type="range"
+    />
+  </p>
+</div>
+`;
+
+exports[`Should render InputSelect component 1`] = `
+<div
+  className="input-field col s12"
+>
+  <p>
+    Select color: 
+  </p>
+  <select
+    defaultValue="red"
+    onChange={[Function]}
+  >
+    <option
+      value="red"
+    >
+      Red
+    </option>
+    <option
+      value="orange"
+    >
+      Orange
+    </option>
+    <option
+      value="yellow"
+    >
+      Yellow
+    </option>
+    <option
+      value="green"
+    >
+      Green
+    </option>
+    <option
+      value="purple"
+    >
+      Purple
+    </option>
+    <option
+      value="teal"
+    >
+      Teal
+    </option>
+    <option
+      value="aqua"
+    >
+      Aqua
+    </option>
+    <option
+      value="blue"
+    >
+      Blue
+    </option>
+    <option
+      value="black"
+    >
+      Black
+    </option>
+    <option
+      value="gray"
+    >
+      Gray
+    </option>
+  </select>
+</div>
+`;
+
+exports[`Should render NavBar component 1`] = `
+<nav
+  className="nav-wrapper"
+>
+  <ul
+    className="nav-wrapper__ul"
+  >
+    <li
+      className="nav-wrapper__li"
+    >
+      <NavLink
+        activeClassName="is-active"
+        className="nav-wrapper__a"
+        exact={true}
+        onClick={[Function]}
+        to="/"
+      >
+        Dashboard
+      </NavLink>
+    </li>
+    <li
+      className="nav-wrapper__li"
+    >
+      <NavLink
+        activeClassName="is-active"
+        className="nav-wrapper__a"
+        onClick={[Function]}
+        to="/gallery"
+      >
+        Gallery
+      </NavLink>
+    </li>
+  </ul>
+  <MenuButton
+    handleClick={[Function]}
+  />
+</nav>
+`;
+
+exports[`Should render Preview component 1`] = `
+<div
+  className="col s12 white dashboard preview"
+>
+  <div
+    className="container"
+  >
+    <p
+      className="preview__title"
+    >
+      Preview:
+    </p>
+    <PreviewText />
+  </div>
+  <div
+    className="preview__box"
+  >
+    <DynamicRectangle />
+  </div>
+</div>
+`;

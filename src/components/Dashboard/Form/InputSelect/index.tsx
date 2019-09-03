@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import M from "materialize-css";
 import { SelectInputProps } from "../../../../types/components";
 
 const SelectInput: React.FC<SelectInputProps> = ({ handleChange }) => {
-  React.useEffect(() => {
+  useEffect(() => {
     // init the MaterializeCSS <select> styling
     let elem = document.querySelector("select");
     M.FormSelect.init(elem);
