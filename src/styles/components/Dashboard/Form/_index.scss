@@ -1,6 +1,11 @@
 .form {
   padding: 2rem 0;
 
+  ul {
+    height: 300px !important;
+    top: -150px !important;
+  }
+
   .range-field {
     margin: 0;
   }

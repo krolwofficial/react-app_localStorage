@@ -1,11 +1,17 @@
-const initState = {
-  width: 60,
-  height: 60,
+import { TRectangleActions } from "../../types/store";
+import { TRectangleStyle } from "../../types/components";
+
+const initState: TRectangleStyle = {
+  width: "40",
+  height: "40",
   background: "red",
-  borderRadius: 5
+  borderRadius: "40"
 };
 
-const rectangleReducer = (state: any = initState, { type, payload }): void => {
+const rectangleReducer = (
+  state = initState,
+  { type, payload }: TRectangleActions
+): TRectangleStyle => {
   switch (type) {
     case "SET_WIDTH":
       return { ...state, width: payload };

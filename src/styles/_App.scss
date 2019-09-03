@@ -7,6 +7,7 @@ body {
   background: url("/img/background.jpg") no-repeat;
   background-size: cover;
   background-position: 50% 50%;
+  overflow: auto;
 }
 
 .freepik-image {
@@ -30,11 +31,13 @@ body {
     height: calc(90vh - 100px);
     overflow: scroll;
   }
+
   @include respond-to(med) {
     top: 70px;
     height: calc(90vh - 70px);
     overflow: scroll;
   }
+
   @include respond-to(small) {
     top: 50px;
     height: calc(100vh - 70px);

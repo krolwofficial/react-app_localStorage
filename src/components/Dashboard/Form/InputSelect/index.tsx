@@ -1,10 +1,8 @@
 import React from "react";
 import M from "materialize-css";
-import { useDispatch } from "react-redux";
+import { SelectInputProps } from "../../../../types/components";
 
-const SelectInput: any = ({ handleChange }) => {
-  const dispatch = useDispatch();
-
+const SelectInput: React.FC<SelectInputProps> = ({ handleChange }) => {
   React.useEffect(() => {
     // init the MaterializeCSS <select> styling
     let elem = document.querySelector("select");

@@ -7,4 +7,6 @@ const rootReducer = combineReducers<any>({
   rectangle: rectangleReducer
 });
 
+export type AppState = ReturnType<typeof rootReducer>;
+
 export default rootReducer;

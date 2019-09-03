@@ -1,18 +1,27 @@
 import React from "react";
 import InputRange from "./InputRange";
 import InputSelect from "./InputSelect";
-import { withRouter } from "react-router-dom";
+import { withRouter, RouteComponentProps } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { RectangleProps, TRectangle } from "../../../types/components";
 import uuid from "uuid/v4";
+import {
+  AddRectangleAction,
+  SetWidthRectangle,
+  SetHeightRectangle,
+  SetBackgroundRectangle,
+  SetBRadiusRectangle
+} from "../../../types/store";
 
-const Form: React.FC<any> = ({ history }) => {
+const Form: React.FC<RouteComponentProps> = ({ history }) => {
   const dispatch = useDispatch();
-  const rectangle = useSelector<any, any>(state => state.rectangle);
-  const gallery = useSelector<any, any>(state => state.gallery);
+  const rectangle = useSelector<RectangleProps, TRectangle>(
+    state => state.rectangle
+  );
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): any => {
     e.preventDefault();
-    dispatch({
+    dispatch<AddRectangleAction>({
       type: "ADD_RECTANGLE",
       payload: {
         id: uuid(),
@@ -22,7 +31,6 @@ const Form: React.FC<any> = ({ history }) => {
         borderRadius: rectangle.borderRadius
       }
     });
-    localStorage.setItem("gallery", JSON.stringify(gallery));
     history.push("/gallery");
   };
 
@@ -32,18 +40,17 @@ const Form: React.FC<any> = ({ history }) => {
         <form onSubmit={e => handleSubmit(e)} className="form">
           <InputRange
             handleChange={val =>
-              dispatch({
+              dispatch<SetWidthRectangle>({
                 type: "SET_WIDTH",
                 payload: val
               })
             }
-            storeVariable={"width"}
             max={200}
             text={"width"}
           />
           <InputRange
             handleChange={val =>
-              dispatch({
+              dispatch<SetHeightRectangle>({
                 type: "SET_HEIGHT",
                 payload: val
               })
@@ -53,7 +60,7 @@ const Form: React.FC<any> = ({ history }) => {
           />
           <InputSelect
             handleChange={val =>
-              dispatch({
+              dispatch<SetBackgroundRectangle>({
                 type: "SET_BACKGROUND",
                 payload: val
               })
@@ -61,7 +68,7 @@ const Form: React.FC<any> = ({ history }) => {
           />
           <InputRange
             handleChange={val =>
-              dispatch({
+              dispatch<SetBRadiusRectangle>({
                 type: "SET_BRADIUS",
                 payload: val
               })

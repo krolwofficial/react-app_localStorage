@@ -1,8 +1,8 @@
 import React from "react";
-//import { debounce } from "lodash";
-//import _ from "lodash";
+//import _ , { debounce } from "lodash";
+import { RangeInputProps } from "../../../../types/components";
 
-const RangeInput: any = ({ text, max, handleChange }) => (
+const RangeInput: React.FC<RangeInputProps> = ({ text, max, handleChange }) => (
   <div className="input-field col s12">
     <p>Select {text}: </p>
     <p className="range-field">
@@ -11,9 +11,12 @@ const RangeInput: any = ({ text, max, handleChange }) => (
         type="range"
         min="0"
         max={max}
+        defaultValue={"40"}
+        //
         // onChange={({ target: { value } }) =>
         //   _.debounce(handleChange(value), 550)
         // }
+        //
         onChange={({ target: { value } }) => handleChange(value)}
       />
     </p>

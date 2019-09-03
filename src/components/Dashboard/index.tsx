@@ -2,7 +2,7 @@ import React from "react";
 import Form from "./Form";
 import Preview from "./Preview";
 
-const Dashboard = () => (
+const Dashboard: React.FC = () => (
   <div className="row page ">
     <div className="col s12 m5 l5 offset-l1">
       <div className="container">

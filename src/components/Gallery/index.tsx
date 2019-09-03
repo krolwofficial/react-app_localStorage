@@ -1,9 +1,12 @@
 import React from "react";
 import Rectangle from "./Rectangle";
 import { useSelector } from "react-redux";
+import { IGalleryState, TRectangle } from "../../types/components";
 
-const Gallery = () => {
-  const gallery = useSelector<any, any>(state => state.gallery);
+const Gallery: React.FC = () => {
+  const gallery = useSelector<IGalleryState, TRectangle[]>(
+    state => state.gallery
+  );
 
   return (
     <div className="row page">

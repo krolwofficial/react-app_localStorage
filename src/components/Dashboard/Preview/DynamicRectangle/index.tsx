@@ -1,8 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { RectangleProps, TRectangle } from "../../../../types/components";
 
 const DynamicRectangle: React.FC = () => {
-  const rectangle = useSelector<any, any>(state => state.rectangle);
+  const rectangle = useSelector<RectangleProps, TRectangle>(
+    state => state.rectangle
+  );
 
   const styles = {
     div: {

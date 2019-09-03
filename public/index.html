@@ -14,14 +14,71 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
     <title>WIKTOR KROL JS TEST</title>
+    <style>
+      html {
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        height: 100vh;
+        background: url("/img/background.jpg") no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+      }
+
+      .loading-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: calc(50% - 50px);
+        top: 40vh;
+        color: white;
+      }
+
+      .loading-div > p {
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+        letter-spacing: 1px;
+      }
+
+      .lds-dual-ring {
+        display: inline-block;
+        width: 64px;
+        height: 64px;
+      }
+
+      .lds-dual-ring:after {
+        content: " ";
+        display: block;
+        width: 76px;
+        height: 76px;
+        margin: 1px;
+        border-radius: 50%;
+        border: 5px solid #fff;
+        margin-left: -10px;
+        border-color: #fff transparent #fff transparent;
+        animation: lds-dual-ring 1.2s linear infinite;
+      }
+
+      @keyframes lds-dual-ring {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <a
-      class="freepik-image"
-      href="https://www.freepik.com/free-photos-vectors/background"
-      >Background vector created by freepik - www.freepik.com</a
-    >
   </body>
 </html>

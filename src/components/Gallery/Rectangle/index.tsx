@@ -1,9 +1,17 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import {
+  RectangleProps,
+  IGalleryState,
+  TRectangle
+} from "../../../types/components";
+import { RemoveRectangleAction } from "../../../types/store";
 
-const Rectangle = ({ rectangle }) => {
+const Rectangle: React.FC<RectangleProps> = ({ rectangle }) => {
   const dispatch = useDispatch();
-  const gallery = useSelector<any, any>(state => state.gallery);
+  const gallery = useSelector<IGalleryState, TRectangle[]>(
+    state => state.gallery
+  );
 
   const styles = {
     div: {
@@ -15,7 +23,7 @@ const Rectangle = ({ rectangle }) => {
   };
 
   return (
-    <div className="col s12 m6 l4">
+    <div className="col s12 m6 xl4">
       <div className="card">
         <div className="card-image">
           <div style={styles.div} />
@@ -32,7 +40,7 @@ const Rectangle = ({ rectangle }) => {
           <span
             className="red-text card-link "
             onClick={() =>
-              dispatch({
+              dispatch<RemoveRectangleAction>({
                 type: "REMOVE_RECTANGLE",
                 payload: gallery.filter(({ id }) => rectangle.id !== id)
               })
